@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+</head>
+<body >
+    <center>
+    <h1>Search here!</h1>
+    <div>
+            <form  action="" method="post" >
+                <div class="form-group" >
+                   <span >{{ form.keyword(class = "btn btn-default" , size=32) }}</span>
+                   <span >{{ form.search(class ="btn btn-primary") }}</span>
+                </div>
+            </form>
+    </div>
+    </center>
+    <div>
+        {% if keyword %}
+            <center><h2> {{ photoNumber }} photos were found. </h2></center>
+            <div>
+                {% for url in urls %}
+                    <span >
+                    <a href= {{ url }}>
+                        <img style="margin-bottom: 20px ; margin-right: 10px ; margin-left: 10px " class="img-rounded" height=300 width=300 src={{ url }} >
+                    </a>
+                    </span>
+
+                {% endfor %}
+            </div>
+        {% else %}
+
+        {% endif %}
+    </div>
+
+</body>
+</html>
